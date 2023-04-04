@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS nobots_db;
+CREATE DATABASE nobots_db;
