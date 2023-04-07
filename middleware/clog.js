@@ -1,9 +1,9 @@
 const clog = (req, res, next) => {
-    const fbCyan = '\x1b[36m';
+    const fgCyan = '\x1b[36m';
     switch (req.method) {
       
         case 'GET': {
-            console.info(`📗 ${fbCyan}${req.method} request to ${req.path}`);
+            console.info(`📗 ${fgCyan}${req.method} request to ${req.path}`);
             break;
         }
         case 'POST': {
