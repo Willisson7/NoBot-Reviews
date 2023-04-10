@@ -31,12 +31,12 @@ Review.init(
         key: 'id'
       }
     },
-
+      /*
     post_id: {
       type: DataTypes.STRING,
       allowNull: false,
       references: { model: 'post', key: 'id' }
-    }
+    }*/
 
   },
 

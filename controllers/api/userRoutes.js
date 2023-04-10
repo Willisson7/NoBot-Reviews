@@ -2,9 +2,15 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
+
+
+  console.log("what am i getting?", req.body)
+  
   try {
     // Creating a new user in the database
+  
     const userData = await User.create(req.body);
+    console.log("what is my user?",userData)
 
     req.session.save(() => {
       req.session.user_id = userData.id;
