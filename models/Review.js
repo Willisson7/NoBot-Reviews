@@ -38,14 +38,17 @@ Review.init(
       references: { model: 'post', key: 'id' }
     }*/
 
-  },
+  
 
 
 
   //   add image model in future;
-
-  {
-
+  img_url: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+},
+{
     sequelize,
     timestamps: false,
     freezeTableName: true,

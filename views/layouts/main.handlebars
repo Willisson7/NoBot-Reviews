@@ -4,18 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .body-bg {
+      background-color: #9921e8;
+      background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+    }
+  </style>
   <title>NoBot Reviews</title>
-
-  
 </head>
 
-<body>
+<body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
   <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Welcome to NoBot Reviews!</a>
-      </h1>
+    <header class="max-w-lg mx-auto">
+
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -26,12 +29,14 @@
         {{/if}}
       </nav>
     </header>
-    <main class="container container-fluid mt-5">
+    <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-    <footer>
-      
+    <footer class="max-w-lg mx-auto flex justify-center text-white">
+      <a href="#" class="hover:underline">Contact</a>
+      <span class="mx-3">•</span>
+      <a href="#" class="hover:underline">Privacy</a>
     </footer>
   </div>
 
