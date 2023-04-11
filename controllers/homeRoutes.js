@@ -21,7 +21,7 @@ console.log(reviews)
     // This is the route for the homepage.handlebars
     res.render('homepage',{
       reviews,
-      // logged_in: req.session.logged_in
+      logged_in: (req.session && req.session.logged_in)
     });
   } catch (err) {
     res.status(500).json(err);
@@ -75,9 +75,10 @@ router.get('/profile', withAuth, async (req, res) => {
 // This will handle direcing to a login.handlebars
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
+  if (!req.session.logged_in) {
+    res.render('login');
+    // res.redirect('/profile');
+     return;
   }
 
   res.render('login');

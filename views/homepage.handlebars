@@ -1,9 +1,9 @@
 <body class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
-        <header class="max-w-lg mx-auto">
+        {{!-- <header class="max-w-lg mx-auto">
             <a href="#">
-                <h1 class="text-4xl font-bold text-white text-center">Nobot Reviews</h1>
+                <h1 class="text-4xl font-bold text-black text-center">Nobot Reviews</h1>
             </a>
-        </header>
+        </header> --}}
     <!--
   This component uses @tailwindcss/line-clamp
 
@@ -12,6 +12,9 @@
 
   plugins: [require('@tailwindcss/line-clamp')]
 -->
+{{#if logged_in}}
+<div>You are logged in!</div>
+{{/if}}
 {{#each reviews}}
 <article class="group">
     <img
@@ -34,10 +37,10 @@
   </article>
   {{/each}}
     
-        <footer class="max-w-lg mx-auto flex justify-center text-white">
+        {{!-- <footer class="max-w-lg mx-auto flex justify-center text-white">
             <a href="#" class="hover:underline">Contact</a>
             <span class="mx-3">•</span>
             <a href="#" class="hover:underline">Privacy</a>
-        </footer>
+        </footer> --}}
         <script src="../tailwind.config.js"></script>
 </body>
