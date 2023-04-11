@@ -7,21 +7,21 @@ router.get('/', async (req, res) => {
   try {
     // Get all reviews and JOIN with user data
     const reviewData = await Review.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
+      // include: [
+      //   // {
+      //   //   model: User,
+      //   //   attributes: ['name'],
+      //   // },
+      // ],
     });
-
+console.log(reviewData)
     // Serialize data so the template can read it
     const reviews = reviewData.map((review) => review.get({ plain: true }));
-
+console.log(reviews)
     // This is the route for the homepage.handlebars
-    res.render('homepage', reviews, {
-      projects,
-      logged_in: req.session.logged_in
+    res.render('homepage',{
+      reviews,
+      // logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
