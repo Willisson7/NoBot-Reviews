@@ -1,7 +1,11 @@
-<div class="text-center">
-  <h2>{{product_name}}</h2>
-  <p>{{comment_info}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-    <button class="btn btn-primary">Post a Review</button>
-  </p>
-</div>
+<form id="review-form">
+  
+  <input type="text" id="productname"/>
+  <input type="text" id="userReview"/>
+  <input type="text" id="img_url"/>
+
+  <button type="submit">Submit Review</button>
+
+</form>
+
+<script src="/js/addReview.js"></script>

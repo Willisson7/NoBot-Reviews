@@ -23,11 +23,11 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const newReview = await Review.create({
       ...req.body,
-      id: req.session.id,
+      user_id: req.session.user_id,
     });
 
     res.status(200).json(newReview);
@@ -35,19 +35,17 @@ router.post('/:id', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-// ditch this post route once project comes together
+// router.post('/', async (req, res) => {
+//   try {
+//     const newReview = await Review.create({
+//       ...req.body,
+//     });
 
-router.post('/', async (req, res) => {
-  try {
-    const newReview = await Review.create({
-      ...req.body,
-    });
-
-    res.status(200).json(newReview);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
+//     res.status(200).json(newReview);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const deleteReview = await Review.destroy({
