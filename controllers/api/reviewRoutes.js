@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
       // ],
     });
     const reviewInfo = reviewData.map((getReview) => getReview.get({ plain: true }));
-    // res.render('reviewsPage', { reviewInfo });
+    res.render('review', { reviewInfo });
     res.json(reviewInfo)
   } catch (err) {
     console.log(err);
