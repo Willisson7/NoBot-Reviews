@@ -29,18 +29,18 @@ console.log(reviews)
 });
 
 // This route will point towards the review.handlebars to retrieve a review
-router.get('/review/:id', async (req, res) => {
+router.get('/review', async (req, res) => {
   try {
-    const oneReiew = await Review.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+    // const review = await Review.findByPk(req.params.id, {
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
 
-    const renderReview = reviewData.get({ plain: true });
+    // const renderReview = reviewData.get({ plain: true });
 
     res.render('review', {
 
@@ -89,7 +89,7 @@ router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (!req.session.logged_in) {
     res.render('signup');
-    // res.redirect('/profile');
+    // res.redirect('/homepage');
      return;
   }
 
