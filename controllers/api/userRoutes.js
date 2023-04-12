@@ -5,12 +5,12 @@ router.post('/', async (req, res) => {
 
 
   console.log("what am i getting?", req.body)
-  
+
   try {
     // Creating a new user in the database
-  
+
     const userData = await User.create(req.body);
-    console.log("what is my user?",userData)
+    console.log("what is my user?", userData)
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -54,6 +54,23 @@ router.post('/login', async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.post('/signup', async (req, res) => {
+  try {
+    const newUser = await User.create(req.body);
+    req.session.save(() => {
+      req.session.user_id = newUser.id;
+      req.session.logged_in = true;
+
+      res.status(200).json(newUser);
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
+
+}
+);
 
 router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
