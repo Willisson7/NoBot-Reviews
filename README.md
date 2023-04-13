@@ -42,13 +42,12 @@ When user and password are entered after signing up, then the homepage reloads w
 <br>
 
 ## *NoBots Reviews Repository*  
-[GitHub link here](https://github.com/Willisson7/NoBot-Reviews) 
-
+[https://github.com/Willisson7/NoBot-Reviews]
 <br>
 <br>
 
 ## *Deployed Project*  
-[Heroku link here](https://NoBot-Reviews.herokuapp.com/notes)
+[https://NoBot-Reviews.herokuapp.com/noteslink]
 
     
 

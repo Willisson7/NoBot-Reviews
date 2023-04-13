@@ -96,5 +96,13 @@ router.get('/signup', (req, res) => {
   res.redirect('/');
 });
 
+// A route to send a user to a review form - Willis
 
+router.get('/review', (req, res) => {
+  if(req.session.logged_in) {
+    res.render('/review');
+    return;
+  }
+  res.redirect('/')
+})
 module.exports = router;
