@@ -14,6 +14,8 @@
 -->
 {{#if logged_in}}
 <div>You are now logged in!</div>
+<p class="text-black review-form">Add a review?<a href="/review" class="font-bold hover:underline">Yes</a></p>
+
 {{/if}}
 {{#each reviews}}
 <article class="group">
@@ -42,5 +44,5 @@
             <span class="mx-3">•</span>
             <a href="#" class="hover:underline">Privacy</a>
         </footer> --}}
-        <script src="../tailwind.config.js"></script>
+        {{!-- <script src="../tailwind.config.js"></script> --}}
 {{!-- </body> --}}
